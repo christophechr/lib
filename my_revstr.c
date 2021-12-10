@@ -5,30 +5,21 @@
 ** Reverse a string
 */
 
-int lenght_string_rev(char *str)
-{
-    int d = 0;
-
-    while (str[d] != '\0') {
-        d++;
-    }
-    return d;
-}
+#include "lib.h"
 
 char *my_revstr(char *str)
 {
-    int c = 0;
-    int d = lenght_string_rev(str) - 1;
-    int e = d;
-    char str_fix[lenght_string_rev(str)];
+    char tmp;
+    int idx;
+    int lenght;
 
-    for (c; c <= d; c++) {
-        str_fix[e] = str[c];
-        e--;
-    }
-    c = 0;
-    for (c; c <= d; c++) {
-        str[c] = str_fix[c];
+    idx = 0;
+    lenght = my_strlen(str) - 1;
+    while (idx <= lenght / 2) {
+        tmp = str[idx];
+        str[idx] = str[lenght - idx];
+        str[lenght - idx] = tmp;
+        idx += 1;
     }
     return str;
 }
