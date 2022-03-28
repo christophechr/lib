@@ -5,20 +5,12 @@
 ** Putting all letters in uppercase
 */
 
-int lenght_string_d(char *str)
-{
-    int d = 0;
-
-    while (str[d] != '\0') {
-        d++;
-    }
-    return d;
-}
+#include "lib.h"
 
 char *my_strupcase(char *str)
 {
     int c = 0;
-    int len_str = lenght_string_d(str);
+    int len_str = my_strlen(str);
 
     while (c < len_str) {
         str[c] = str[c] + 20;
