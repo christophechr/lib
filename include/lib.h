@@ -34,4 +34,6 @@
 
     char *my_strncat(char *, char const *, int);
 
+    char **my_str_to_array(char *str, char *separator);
+
 #endif /* !LIB_H_ */
